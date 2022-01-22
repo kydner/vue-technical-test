@@ -10,6 +10,7 @@ export default new Vuetify({
         primary: "#C0222E", // #E53935
         dark: "#232C32", // #FFCDD2
         black: "#191C1F",
+        white: "#ffffff",
       },
     },
   },

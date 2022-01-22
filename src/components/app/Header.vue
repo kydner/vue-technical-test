@@ -3,7 +3,9 @@
     <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
     <v-container class="py-0 fill-height" fluid>
       <v-toolbar-title>
-        <v-img src="/MERDEKA_3D.svg" max-height="30" max-width="100"></v-img>
+        <router-link to="/">
+          <v-img src="/MERDEKA_3D.svg" max-height="30" max-width="100"></v-img>
+        </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-text-field

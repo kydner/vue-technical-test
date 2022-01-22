@@ -3,12 +3,12 @@
     <!--  -->
     <v-list dense color="black">
       <v-list-item-group v-model="selectedItem" color="primary">
-        <v-list-item v-for="(item, i) in items" :key="i">
-          <v-list-item-icon>
-            <v-icon v-text="item.icon"></v-icon>
-          </v-list-item-icon>
+        <v-list-item v-for="(item, i) in items" :key="i" :to="item.to">
           <v-list-item-content>
-            <v-list-item-title v-text="item.text"></v-list-item-title>
+            <v-list-item-title
+              v-text="item.text"
+              class="primary-text"
+            ></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
@@ -21,11 +21,18 @@ export default {
     return {
       selectedItem: 1,
       items: [
-        { text: "Real-Time", icon: "mdi-clock" },
-        { text: "Audience", icon: "mdi-account" },
-        { text: "Conversions", icon: "mdi-flag" },
+        { text: "Now Playing", to: "/now-playing" },
+        { text: "Coming Soon", to: "/coming-soon" },
+        { text: "Theater", to: "/theater" },
+        { text: "Promotion", to: "/promotion" },
+        { text: "Information", to: "/information" },
       ],
     };
   },
 };
 </script>
+<style>
+.v-list-item--active {
+  background-color: #191c1f;
+}
+</style>

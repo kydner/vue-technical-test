@@ -12,6 +12,7 @@ module.exports = {
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "prettier/prettier": ["error",{
       "endOfLine": "auto"}
-    ]
+    ],
+    "vue/comment-directive": 0
   },
 };

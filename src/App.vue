@@ -3,7 +3,7 @@
     <Header />
     <Drawer />
     <v-main class="main">
-      <v-container fluid>
+      <v-container fluid class="primary-text">
         <router-view />
       </v-container>
     </v-main>
