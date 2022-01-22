@@ -8,7 +8,7 @@
           <v-row>
             <v-col>
               <v-toolbar-title>
-                <v-img src="/MERDEKA_3D.svg"></v-img>
+                <v-img src="/MERDEKA_3D.svg" height="50"></v-img>
               </v-toolbar-title>
             </v-col>
             <v-col cols="8">
