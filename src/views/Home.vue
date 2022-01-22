@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
+// import debounce from "debounce";
 // import HelloWorld from "../components/HelloWorld";
 import MovieList from "./../components/details/MovieList.vue";
 export default {
@@ -23,27 +25,43 @@ export default {
       totalResult: 0,
     };
   },
+  computed: {
+    ...mapState({
+      searchBox: (state) => state.search.search,
+    }),
+  },
+  watch: {
+    searchBox: {
+      immediate: false,
+      handler() {
+        this.getMovie();
+      },
+    },
+  },
   mounted() {
     this.getMovie();
   },
   methods: {
     getMovie(options = {}) {
       const page = options.page || 1;
-      const title = options.title || "naruto";
-      fetch(`http://www.omdbapi.com/?apikey=271ab1b1&s=${title}&page=${page}`)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.Response) {
-            this.movieLists = [...data.Search];
-            this.totalResult = data.totalResults;
-          }
-        });
+      const title = this.searchBox || null;
+      this.searchMovie({ title, page }).then((response) => {
+        const data = response.data;
+        if (data.Response) {
+          this.movieLists = [...data.Search];
+          this.totalResult = data.totalResults;
+        }
+      });
     },
+
     inputPagination(value) {
       this.getMovie({
         page: value,
       });
     },
+    ...mapActions({
+      searchMovie: "search/search",
+    }),
   },
 };
 </script>

@@ -2,7 +2,11 @@
   <v-navigation-drawer v-model="drawer" clipped app color="black">
     <!--  -->
     <v-list dense color="black">
-      <v-list-item-group v-model="selectedItem" color="primary">
+      <v-list-item-group
+        v-model="selectedItem"
+        color="primary"
+        active-class="grey--text"
+      >
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to">
           <v-list-item-content>
             <v-list-item-title

@@ -6,7 +6,7 @@
         style="text-decoration: none"
       >
         <v-card>
-          <v-img :src="movie.Poster" contain></v-img>
+          <v-img :src="movie.Poster" max-height="420"></v-img>
           <!-- <v-card-title class="text-h6">
         </v-card-title> -->
         </v-card>
@@ -20,6 +20,7 @@
         v-model="page"
         :length="paginationLength"
         circle
+        class="custom-pagination"
         previous-aria-label="Sebelumnya"
         next-aria-label="Selanjutnya"
         @input="(event) => $emit('inputPagination', event)"
