@@ -55,6 +55,7 @@ export default {
     searchBlur(event) {
       this.$emit("searchBlur", event);
       console.log(event);
+      this.$router.replace("/").catch(() => {});
     },
   },
 };
