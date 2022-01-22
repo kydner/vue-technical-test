@@ -22,7 +22,7 @@
           <v-col>
             <v-btn color="primary">Buy Ticket</v-btn>
             &nbsp;
-            <v-btn color="primary">Buy Ticket</v-btn>
+            <v-btn color="primary">Watch Trailer</v-btn>
           </v-col>
         </v-col>
       </v-row>
