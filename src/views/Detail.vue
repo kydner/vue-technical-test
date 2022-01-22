@@ -24,7 +24,6 @@ export default {
   mounted() {
     if (this.$route.params?.id) {
       const id = this.$route.params.id;
-      console.log(this.$route.params.id);
       fetch(`http://www.omdbapi.com/?apikey=271ab1b1&i=${id}`)
         .then((response) => response.json())
         .then((data) => {

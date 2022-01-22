@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer clipped app color="black">
+  <v-navigation-drawer v-model="drawer" clipped app color="black">
     <!--  -->
     <v-list dense color="black">
       <v-list-item-group v-model="selectedItem" color="primary">
@@ -17,6 +17,12 @@
 </template>
 <script>
 export default {
+  props: {
+    drawer: {
+      type: [Boolean],
+      default: null,
+    },
+  },
   data() {
     return {
       selectedItem: 1,
